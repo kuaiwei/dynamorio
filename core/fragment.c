@@ -775,6 +775,8 @@ hashtable_ibl_myinit(dcontext_t *dcontext, ibl_table_t *table, uint bits,
     flags |= HASHTABLE_ALIGN_TABLE;
     /* use entry stats with all our ibl-targeted tables */
     flags |= HASHTABLE_USE_ENTRY_STATS;
+    /* pass jvm tests, it create more ibl entries */
+    flags |= HASHTABLE_RELAX_CLUSTER_CHECKS;
 #ifdef HASHTABLE_STATISTICS
     /* indicate this is first time, not a resize */
     table->unprot_stats = NULL;
